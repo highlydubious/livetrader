@@ -1,1 +1,4 @@
-This is where all the statuses willg go
+<% @status.each do |s| %>
+	<%= s.name %><br/>
+	<%= s.comment %><br/>
+<% end %>

@@ -1,0 +1,8 @@
+<div class="dashboard">
+	<% @accounts.each do |a| %>
+		<ul>
+			<li><%= a.name %></li>
+			<li><%= a.balance %></li>
+		</ul>
+	<% end %>
+</div>

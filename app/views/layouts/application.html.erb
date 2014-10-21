@@ -15,8 +15,15 @@
 
     <%= render 'layouts/navbar.html.erb' %>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+
+  <% if flash[:notice] %>
+    <div data-alert class="alert-box secondary">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+
 
     <%= yield %>
     <%= javascript_include_tag "application" %>

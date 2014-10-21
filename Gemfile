@@ -40,6 +40,10 @@ end
 
 gem 'devise'
 gem 'foundation-rails'
+gem 'httparty'
+
+# Yahoo query language package
+gem 'yql', '~> 0.0.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,3 +1,48 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content1 {
+	background-color: #22AE73;
+	background-image: linear-gradient(135deg, #00BFBC, #22AE73);
+	height: 768px;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.content2 {
+	background-color: yellow;
+	background-image: linear-gradient(45deg, #ED1C24, #D4145A);
+	height: 768px;
+}
+
+.content3 {
+	background-color: #343842;
+	height: 369px;
+}
+
+
+.centerStuff {
+	padding-top: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#tradeButton {
+	background-color: none;
+	border: 1px solid #F1F0F1;
+	padding: 14px 72px;
+	// width: 180px;
+	// height: 50px;
+	text-align: center;
+	color: #F1F0F1;
+}
+
+.info {
+	border: 1px solid black;
+}
+
