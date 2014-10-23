@@ -26,6 +26,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
+gem 'font-awesome-rails', '~> 4.2.0.0'
+
 
 # Customer Gems
 group :development, :test do
@@ -44,6 +46,11 @@ gem 'httparty'
 
 # Yahoo query language package
 gem 'yql', '~> 0.0.2'
+gem 'yql-query'
+
+
+# Use Foundation 5 Icont Fonts 3
+ 
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

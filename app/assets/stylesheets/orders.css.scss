@@ -14,10 +14,16 @@
 	color: #1D8FAA;
 }
 
-.orderBackground {
+.orderContainer {
 	background: #F6FCF5;
 	height: 768px;
 	width: 100%;
+	font-family: 'Exo 2';
+	font-weight: 300; 
+}
+
+.orderContainer ul {
+	list-style: none;
 }
 
 

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
 
+  get 'stocks/index'
+
   root 'pages#index'
 
   get 'profiles/show'
+
+  get 'api/stocks/:symbol' => 'stocks#get_stock'
 
 
 
@@ -16,11 +20,15 @@ Rails.application.routes.draw do
   end
   
 
-  resources :orders
+  
 
   get 'dashboard' => 'accounts#index', as: :dashboard
 
-  resources :accounts
+
+  resources :accounts do
+    resources :orders
+  end
+  
   resources :pages
   resources :statuses
     get 'feed' => 'statuses#index', as: :feed

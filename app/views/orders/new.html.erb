@@ -2,5 +2,49 @@
 	<h2 id="order">Order Up</h2>
 </div>
 
-<div class="orderBackground">
-</div>
+
+<%= form_for ([@account, @order]) do |f| %>
+
+<div class="orderContainer">
+   <div class="row">
+      <form>
+      	<div class="large-6 columns">
+        <ul id="price-form">
+
+          <li class="required">
+            <%= f.label :stock %>
+            <%= f.text_field :stock, autofocus: true %>
+          </li>
+          <li class="required">
+            <%= f.label :Quantity %>
+            <%= f.number_field :qty, size: 6 %>
+          </li>
+          <li class="required">
+            <%= f.label :price %>
+            <%= f.number_field :price, size: 6 %>
+          </li>
+
+          <li>
+          	<%= check_box_tag(:pet_dog) %>
+    		<%= label_tag(:pet_dog, "Long") %>
+    		<%= check_box_tag(:pet_cat) %>
+    		<%= label_tag(:pet_cat, "Short") %>
+    	</li>
+        </ul>
+
+        <p>
+          <%= f.submit %>
+          <%= link_to "Cancel", '#', class: 'button' %>
+        </p>
+        </div>
+      </form>
+    <% end %>
+
+    <!-- Price Information Area Right Side -->
+
+    <div class="large-6 columns">
+    	<div id="show-price-form"></div>
+    </div>
+  </div>
+
+</div> <!-- end orderBackground -->

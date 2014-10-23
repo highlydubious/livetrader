@@ -2,14 +2,50 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.content1 {
+.headline {
 	background-color: #22AE73;
 	background-image: linear-gradient(135deg, #00BFBC, #22AE73);
-	height: 768px;
+	height: 620px;
   // display: flex;
   align-items: center;
   justify-content: center;
 
+}
+
+#mainHeader {
+	padding-top: 160px;
+	font-family: 'Raleway';
+	font-weight: 300;
+	color: white;
+}
+
+ .about {
+ 	height: 200px;
+ 	background: #228876;
+ }
+
+
+
+.lead {
+	color: #3A494B;
+	margin-bottom: 70px;
+}
+
+.lead:nth-of-type(2) {
+	font-size: 12px;
+	margin-bottom: 20px;
+
+}
+
+
+#tradeButton {
+	background-color: none;
+	border: 1px solid #F1F0F1;
+	padding: 14px 72px;
+	// width: 180px;
+	// height: 50px;
+	text-align: center;
+	color: #F1F0F1;
 }
 
 .content2 {
@@ -17,6 +53,8 @@
 	background-image: linear-gradient(45deg, #ED1C24, #D4145A);
 	height: 768px;
 }
+
+
 
 .content3 {
 	background-color: #343842;
@@ -32,17 +70,51 @@
 
 }
 
-#tradeButton {
-	background-color: none;
-	border: 1px solid #F1F0F1;
-	padding: 14px 72px;
-	// width: 180px;
-	// height: 50px;
-	text-align: center;
-	color: #F1F0F1;
-}
+
 
 .info {
 	border: 1px solid black;
 }
+
+
+#fontIcon {
+    color: #fff;
+    // text-shadow: 1px 1px 1px #ccc;
+    padding-right: 5px;
+    font-size: 1em;
+}
+
+.alert_notice {
+	background-color: RGBA(46, 46, 46, 1);
+	
+
+}
+
+.alert_notice p {
+	margin: 0px;
+	padding: 5px 0;
+	color: white;
+}
+
+///////// Buttons ///////////
+
+.btn-dl {
+	color: white;
+	border: solid 1px white;
+	margin-right: 10px;
+	padding: 10px 20px;
+	display: inline-block;
+	font-family: 'Exo 2';
+}
+
+.btn-dl:hover {
+	background-color: white;
+	border-color: white;
+	color: #957bba;
+}
+
+.rnd {
+	border-radius: 3px;
+}
+
 

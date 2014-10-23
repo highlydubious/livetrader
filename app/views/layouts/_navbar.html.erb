@@ -1,26 +1,29 @@
+<div class="contain-to-grid fixed">
+
 <nav class="top-bar" data-topbar role="navigation">
+
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">My Site</a></h1>
+      <h1><a href="#">Live Trader</a></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
-  <section class="top-bar-section nav">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li><%= link_to 'Feed', feed_path %></li>
 
+<!-- Right Nav Section -->
+  <section class="top-bar-section nav">  
+    <ul class="right">
+        <li><%= link_to '<i id="fontIcon" class="fa fa-twitter"></i>Feed'.html_safe, feed_path %></li>
       <% if user_signed_in? %>
         <li><%= link_to current_user.email, edit_user_registration_path %></li>
         <li><%= link_to 'Logout', logout_path %></li>
       <% else %>
-        <li><%= link_to 'Register', register_path %></li>
-        <li><%= link_to 'Log In', login_path %></li>
+        <li><%= link_to '<i id="fontIcon" class="fa fa-plus-square"></i>Register'.html_safe, register_path %></li>
+        <li>
+          <a href="#" data-reveal-id="myModal"><i id="fontIcon" class="fa fa-sign-in" data-reveal-id="myModal"></i>Login</a>
+        </li>
       <% end %>
-
-
 
       <li class="has-dropdown">
         <a href="#">Right Button Dropdown</a>
@@ -31,10 +34,23 @@
       </li>
     </ul>
 
-    <!-- Left Nav Section -->
+<!-- Left Nav Section -->
     <ul class="left">
-      <li><a href="#">Left Nav Button</a></li>
-      <li><a href="#">Left Nav Button</a></li>
+      <li><a href="#"> 
+        <i id="fontIcon" class=" fa fa-database fa-lg"></i>Left Nav Button
+        </a></li>
+      <li><a href="#"><i id="fontIcon" class=" fa fa-sign-in"></i>Left Nav Button</a></li>
     </ul>
   </section>
 </nav>
+</div>
+<!-- End Top Bar -->
+
+<!-- Login Modal -->
+<div id="myModal" class="reveal-modal small" data-reveal>
+  <h2>Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- End Login Modal -->
