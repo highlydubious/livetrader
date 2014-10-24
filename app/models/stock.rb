@@ -9,7 +9,7 @@ require 'HTTParty'
   def self.get_price(symbol)
     t = Time.now.strftime "%Y-%m-%d"
     startDate = '2014-10-21'
-    endDate = t
+    endDate = '2014-10-21'
 
     builder = YqlQuery::Builder.new
 
@@ -31,6 +31,8 @@ require 'HTTParty'
       symbol: symbol, 
       price: close
     }
+
+    puts url
 
   end
 

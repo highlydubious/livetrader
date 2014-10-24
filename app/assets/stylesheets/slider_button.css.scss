@@ -1,0 +1,26 @@
+
+
+.switch {
+    padding-top: 20px;
+    z-index: 1;
+    
+}
+
+.switch input + label {
+    height: 50px;
+    border-radius: 4px;
+}
+
+.switch input {
+    border-radius: 4px;
+
+}
+
+.switch input:checked + label {
+    background: red;
+}
+
+.switch label:after {
+    height: 40px;
+    border-radius: 4px;
+}

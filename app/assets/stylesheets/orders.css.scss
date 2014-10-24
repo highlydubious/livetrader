@@ -8,6 +8,7 @@
 	background: #D9FCFF;
 	text-align: center;
 	padding-top: 20px;
+	border-bottom: 1px solid #9BD4C6;
 }
 
 #order {
@@ -16,14 +17,37 @@
 
 .orderContainer {
 	background: #F6FCF5;
-	height: 768px;
+	height: 768px;	
 	width: 100%;
 	font-family: 'Exo 2';
 	font-weight: 300; 
+	font-size: 30px;
 }
 
 .orderContainer ul {
 	list-style: none;
+}
+
+input[type="text"], input[type="number"]  {
+	background-color: white;
+	height: 80px;
+	font-size: 33px;
+	z-index: 1000;
+	border: 1px solid #9BD4C6;
+	border-radius: 2px;
+}
+
+.orderRow {
+	padding-top: 90px;
+	border-bottom: 1px solid #9BD4C6;
+}
+
+.stock-show {
+	font-size: 45px;
+}
+
+.columns.no-padding {
+	padding: 0 9px 0 0;
 }
 
 

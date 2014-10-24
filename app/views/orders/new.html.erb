@@ -6,45 +6,47 @@
 <%= form_for ([@account, @order]) do |f| %>
 
 <div class="orderContainer">
-   <div class="row">
+   <div class="row orderRow">
       <form>
-      	<div class="large-6 columns">
+      	<div class="large-6 large-centered columns">
         <ul id="price-form">
 
+          <div class="large-6 columns no-padding">
           <li class="required">
-            <%= f.label :stock %>
-            <%= f.text_field :stock, autofocus: true %>
-          </li>
-          <li class="required">
-            <%= f.label :Quantity %>
-            <%= f.number_field :qty, size: 6 %>
-          </li>
-          <li class="required">
-            <%= f.label :price %>
-            <%= f.number_field :price, size: 6 %>
+            
+            <%= f.text_field :stock, autofocus: true, placeholder: "Ticker" %>
           </li>
 
-          <li>
-          	<%= check_box_tag(:pet_dog) %>
-    		<%= label_tag(:pet_dog, "Long") %>
-    		<%= check_box_tag(:pet_cat) %>
-    		<%= label_tag(:pet_cat, "Short") %>
-    	</li>
+          </div>
+          <div class="large-6 columns no-padding">
+          <li class="required">
+            
+            <%= f.number_field :qty, size: 6, placeholder: 'Shares' %>
+          </li>
+          </div>
+
         </ul>
-
+        <div class="row">
+        <div class="large-12 columns">
         <p>
           <%= f.submit %>
           <%= link_to "Cancel", '#', class: 'button' %>
         </p>
         </div>
+        </div>
+        </div>
       </form>
     <% end %>
 
-    <!-- Price Information Area Right Side -->
+</div> <!-- end orderBackground -->
 
-    <div class="large-6 columns">
-    	<div id="show-price-form"></div>
+    <!-- Price Information Area Right Side -->
+<div class="row">
+    <div class="large-2 columns large-centered stock-show">
+      <div id="show-stock"></div>
+      <div id="show-info"></div>
+      <div id="show-qty"></div>
+    	<div id="show-cost"></div>
     </div>
   </div>
-
-</div> <!-- end orderBackground -->
+</div>
