@@ -1,0 +1,26 @@
+.bg-body {
+	background-color: #343842;
+	height: 1084px;
+}
+
+.signup {
+	color: white;
+	font-size: 18px;	
+}
+
+.sign-up h2 {
+	font-size: 50px;
+	color: white;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.sign-up input[type="text"], input[type="number"], input[type="email"], input[type="password"]   {
+	background-color: white;
+	height: 60px;
+	font-size: 33px;
+	z-index: 1000;
+	border: 1px solid #9BD4C6;
+	border-radius: 2px;
+}
+

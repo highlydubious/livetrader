@@ -2,6 +2,11 @@
 	<h2 id="order">Order Up</h2>
 </div>
 
+<%= @account.inspect %><br/>
+<%= @order.inspect %><br/>
+<%= @stock.inspect %><br/>
+
+
 
 <%= form_for ([@account, @order]) do |f| %>
 
@@ -29,8 +34,8 @@
         <div class="row">
         <div class="large-12 columns">
         <p>
-          <%= f.submit %>
-          <%= link_to "Cancel", '#', class: 'button' %>
+          <%= f.submit "Confirm", class: "button" %>
+          <%= link_to "Cancel", '#', class: 'button alert' %>
         </p>
         </div>
         </div>

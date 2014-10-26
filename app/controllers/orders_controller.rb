@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :create_account
+  before_action :find_account
 
   def index
   end
@@ -9,15 +9,24 @@ class OrdersController < ApplicationController
 
   def new  
     @order = @account.orders.new
+    @stock = Stock.new
   end
 
   def create
-    # autopopulate stock info
-    # @order = @stock.orders.new()
-    # need dropdown or autopopulated account
-    @order = @stock.orders.new(order_params)
-    @order.account = 
-    @order.price = Stock::stock_info(params[:price])
+  begin
+    @order = @account.orders.new(order_params)
+    @order.stock = Stock.find_or_initialize_by(name: params[:order][:stock]) # needs to be an ID
+    @order.price = Stock::get_price(params[:order][:stock])[:price]
+    if @order.save 
+      redirect_to account_path(@account)
+      # redirect_to @account
+      # redirect_to @order
+    else
+      render 'new'
+    end
+  rescue
+    fail
+   end
   end
 
   def read
@@ -31,10 +40,19 @@ class OrdersController < ApplicationController
 
   private
   def order_params
-    # params.require(:order).permit()
+    params.require(:order).permit(:name, :qty)
   end
 
-  def create_account
-    @account = Account.find(params[:account_id])
+  def find_account
+  
+      @account = Account.find(params[:account_id])
+      
+  if @account && @account.user != current_user || @account == nil
+      redirect_to account_path(current_user.accounts.first)
+      flash[:notice] = "You cheater"
   end
+  else
+      # redirect_to account_path(current_user.accounts.first)
+  end
+  
 end

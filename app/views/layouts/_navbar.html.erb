@@ -4,7 +4,7 @@
 
   <ul class="title-area">
     <li class="name">
-      <h1><a href="#">Live Trader</a></h1>
+      <h1><%= link_to '<i class="fa fa-line-chart"></i>  Live Trader'.html_safe, root_path %></h1>
     </li>
      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -14,9 +14,10 @@
 <!-- Right Nav Section -->
   <section class="top-bar-section nav">  
     <ul class="right">
-        <li><%= link_to '<i id="fontIcon" class="fa fa-twitter"></i>Feed'.html_safe, feed_path %></li>
+        
       <% if user_signed_in? %>
-        <li><%= link_to current_user.email, edit_user_registration_path %></li>
+        <li><%= link_to "My Portfolio", '#' %></li>        
+        <li><%= link_to current_user.email, dashboard_path %></li>
         <li><%= link_to 'Logout', logout_path %></li>
       <% else %>
         <li><%= link_to '<i id="fontIcon" class="fa fa-plus-square"></i>Register'.html_safe, register_path %></li>
@@ -25,21 +26,15 @@
         </li>
       <% end %>
 
-      <li class="has-dropdown">
-        <a href="#">Right Button Dropdown</a>
-        <ul class="dropdown">
-          <li><a href="#">First link in dropdown</a></li>
-          <li class="active"><a href="#">Active link in dropdown</a></li>
-        </ul>
-      </li>
+
     </ul>
 
 <!-- Left Nav Section -->
     <ul class="left">
-      <li><a href="#"> 
-        <i id="fontIcon" class=" fa fa-database fa-lg"></i>Left Nav Button
-        </a></li>
-      <li><a href="#"><i id="fontIcon" class=" fa fa-sign-in"></i>Left Nav Button</a></li>
+    <% if user_signed_in? %>
+        <li><%= link_to '<i id="fontIcon" class="fa fa-twitter"></i>Feed'.html_safe, "#" %></li>
+      <li><a href="#"><i id="fontIcon" class=" fa fa-sign-in"></i>Quick Order</a></li>
+    <% end %>
     </ul>
   </section>
 </nav>
@@ -48,9 +43,8 @@
 
 <!-- Login Modal -->
 <div id="myModal" class="reveal-modal small" data-reveal>
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <h2 style="text-align: center">Log In Now!</h2>
+  <%= render 'devise/sessions/login_form' %>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 <!-- End Login Modal -->

@@ -1,15 +1,7 @@
 Rails.application.routes.draw do
 
-
-  get 'stocks/index'
-
   root 'pages#index'
-
-  get 'profiles/show'
-
   get 'api/stocks/:symbol' => 'stocks#get_stock'
-
-
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
@@ -19,15 +11,13 @@ Rails.application.routes.draw do
     get 'logout', to: 'devise/sessions#destroy', as: :logout
   end
   
-
-  
-
   get 'dashboard' => 'accounts#index', as: :dashboard
-
 
   resources :accounts do
     resources :orders
   end
+
+  get 'profile' => 'profiles#show'
   
   resources :pages
   resources :statuses

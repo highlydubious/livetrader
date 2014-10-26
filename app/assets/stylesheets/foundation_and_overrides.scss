@@ -447,7 +447,7 @@ $body-font-color: #2E2E2E;
 // We use these to control button border and hover styles.
 // $button-border-width: 0px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: #F10F2F;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -1361,7 +1361,7 @@ $switch-paddle-transition-speed: .05s;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: #0F8764;
+$topbar-bg-color: #3A3239;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin

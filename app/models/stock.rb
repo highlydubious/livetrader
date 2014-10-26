@@ -32,7 +32,6 @@ require 'HTTParty'
       price: close
     }
 
-    puts url
 
   end
 
