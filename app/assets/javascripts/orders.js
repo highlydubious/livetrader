@@ -28,24 +28,23 @@ $(document).ready(function() {
 			var stockPrice = $('#show-price').text(closePrice)
 		});
 
-		$('#order_qty').focusout(function() {
+		var stockName = $(this).val();
+		$('#show-stock').text(stockName);
+
+		
+	});	
+
+	$('#order-qty').focusout(function() {
 			var value = $(this).val();
 			console.log(value);
 			$('#show-qty').html(value)
 
 			var stockPrice = $('#show-price').html()
-			$('#show-cost').html(stockPrice * value)
+			$('#show-cost').text(stockPrice * value)
 			console.log(stockPrice);
 			console.log(value);
 	
 		})
-
-
-		
-		
-
-
-	});	
 });
 
 
