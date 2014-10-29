@@ -1,112 +1,105 @@
+<div class="account-body">
 
 
-<div class="row panel">
+<!-- FIRST: TWO QUICK INFO WINDOWS -->
+	<div class="row quick-info">
+		<!-- 1. Current Stocks in Portfolio -->
+		<div class="large-6 columns account-container-2">
+			<div>
+				<strong class="port"><%= @account.stocks.uniq.count %> Stocks in Portfolio</strong>
+			</div>
+				<p class="your-stocks">
+					<% if @account.stocks.any? %>
+					<% @account.stocks.uniq.each do |stock| %>
+						<%= stock.name %>
+					<% end %>
+					<% end %>
+				</p>
+		</div>
 
-<div class="large-12 columns">
-	<h1>stuff is now in here</h1>
-	<p class="lead">There is stuff in here</p>
-</div>
+		<!-- 2. Balance Info -->
+		<div class="large-3 columns account-info-2">
+			<strong><%= @account.user.full_name %></strong><br>
+			<p>
+				Current Balance: <%= @account.balance %> <br>
+				Balance Outstanding: <%= @account.balance %> <br>
+				Profit/Loss <%= @account.balance %> <br>
+			</p>
+			<!-- TRADE BUTTON -->
+			<div class="row">
+				<%= link_to 'Make a Trade',  new_account_order_path(@account), class: 'button medium' %>
+			</div>
+		</div>
 
-<p class="large-8 large-centered columns button-group radius">
-	<%= link_to 'New Order',  new_account_order_path(@account), class: 'button medium success' %>
-	<%= link_to 'Make a Trade',  new_account_order_path(@account), class: 'button medium' %>
-	<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
-</p>
-</div>
-
-<!-- Premier Content -->
-
-<div class="row">
-	<div class="large-4 columns">
-		<h3>There is stuff here</h3>
-		<p>
-		Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
-		Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		</p>
 	</div>
-	<div class="large-4 columns">
-		<h3>There is stuff here</h3>
-		<p>
-		Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
-		Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		</p>
-	</div>
-	<div class="large-4 columns">
-		<h3>There is stuff here</h3>
-		<p>
-		Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
-		Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		</p>
-	</div>
-</div> <!-- End premier content -->
 
 
-<!-- Other Content -->
 
-<div class="row">
-	
-	<hr>
-	<div class="large-6 columns">
-		<h4>Learn how to make this awesome app</h4>
-		<p>
-		Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
-		Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		</p>
+
+<!-- SECOND LEVEL OF ACCOUNT INFO -->
 	<div class="row">
-		<div class="large-4 columns">
-			<p>THERE IS possibly something useful in here</p>
+
+	<!-- PREVIOUS STOCK ORDERS -->
+		<div class="large-6 columns overflow">
+			<div class="row panel">
+				<%= @account.orders.count %> orders
+			</div>
+			<div>
+				<% @orders.reverse.each do |order| %>
+					<% if order.stock != nil %>
+						<%= order.stock.name %> 
+						<%= order.price %> |
+						<%= order.qty %>  Shares |
+						<%= order.created_at %><br>	
+						<hr>
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	
+
+	<!-- PREVIOUS STOCK ORDERS -->
+		<div class="large-5 columns overflow">
+			<div class="row panel">
+				<%= @account.orders.count %> orders
+			</div>
+			<div>
+				<% @orders.reverse.each do |order| %>
+					<% if order.stock != nil %>
+						<%= order.stock.name %> 
+						<%= order.price %> |
+						<%= order.qty %>  Shares |
+						<%= order.created_at %><br>	
+						<hr>
+					<% end %>
+				<% end %>
+			</div>
 		</div>
 	</div>
-	</div>
-	<div class="large-6 columns">
-		<h4>Learn how to make this awesome app</h4>
-		<p>
-		Sed posuere consectetur est at lobortis. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus
-		Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
-		</p>
-	</div> <!-- End other content -->
 
-</div>
-
-<!-- Page Footer -->
-
-<div class="row">
-	<hr>
-	<div class="large-4 large-centered columns">
-		<p>2013 Awesome Design</p>
+<!-- THIRD PANEL OF IMPORTANT FUTURE INFOMATION -->
+<div class="row panel">
+	<div class="large-12 columns">
+		<h1>stuff is now in here</h1>
+		<p class="lead">There is stuff in here</p>
 	</div>
 </div>
 
-<!-- Form Modal -->
-<div id="myModal" class="reveal-modal small" data-reveal>
-  <h2>Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
 
-  <form class="custom">
-	  <div class="row">
-	    <div class="large-6 columns">
-	      <label>Input Label
-	        <input type="text" placeholder="large-12.columns" />
-	      </label>
-	    </div>
-	    <div class="large-6 columns">
-	      <label>Input Label
-	        <input type="text" placeholder="large-12.columns" />
-	      </label>
-	    </div>
-	   	<div class="large-12 columns">
-	      <select>Input Label
-	        <option>IOS</option>
-	        <option>Android</option>
-	      </select>
-	    </div>
-	  </div>
-  </form>
 
-  <a class="close-reveal-modal">&#215;</a>
+
+<!-- PAGE FOOTER -->
+
+	<div class="row">
+		<hr>
+		<div class="large-4 large-centered columns">
+			<p>2014 <%= @account.user.full_name %></p>
+		</div>
+	</div>
+
+
 </div>
-<!-- End Form Modal -->
+
 
 
 

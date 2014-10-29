@@ -3,6 +3,8 @@ require 'yql-query'
 require 'HTTParty'
 
   has_many :orders
+
+  # Accounts that own a stock
   has_many :accounts, through: :orders
 
 

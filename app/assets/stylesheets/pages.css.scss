@@ -2,80 +2,144 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.headline {
+.headline-container {
 	background-color: #22AE73;
-	background-image: linear-gradient(135deg, #00BFBC, #22AE73);
-	height: 620px;
-  // display: flex;
-  align-items: center;
-  justify-content: center;
-
+	background-image: linear-gradient(155deg, #00BFBC, #22AE73);
+	height: 770px;
 }
 
-#mainHeader {
-	padding-top: 160px;
-	font-family: 'Raleway';
+ .headline-bottom-bar {
+ 	height: 200px;
+ 	background: #292B33;
+ }
+
+
+/***********
+// TEXT
+************/
+
+
+.headline-container h2 {
+	padding-top: 230px;
+	font-family: 'Exo 2';
 	font-weight: 300;
 	color: white;
 }
 
- .about {
- 	height: 200px;
- 	background: #1CB180;
- }
-
-
-
 .lead {
-	color: #3A494B;
-	margin-bottom: 70px;
+	color: #3C3E45;
+	margin-bottom: 40px;
 }
 
-.lead:nth-of-type(2) {
-	font-size: 12px;
+.button-location {
+	font-size: 16px;
 	margin-bottom: 20px;
-
+	text-align: center;
+	padding-top: 150px;
 }
 
+.arrow {
+	padding-top: 30px;
+	text-align: center;
+	font-size: 3em;
+	color: white;
+}
+
+
+// .lead:nth-of-type(2) {
+// 	font-size: 14px;
+// 	margin-bottom: 20px;
+
+// }
+
+
+/***********
+// BUTTON MANIA
+************/
+
+.btn-dl {
+	color: white;
+	border: solid 1px white;
+	margin-right: 10px;
+	padding: 10px 20px;
+	display: inline-block;
+	font-family: 'raleway';
+}
+
+.btn-dl:hover {
+	background-color: white;
+	border-color: white;
+	color: #957bba;
+}
+
+.rnd {
+	border-radius: 2px;
+}
+
+#myModal h2 {
+	border-radius: 5px;
+	font-family: "Exo 2"
+}
 
 #tradeButton {
 	background-color: none;
 	border: 1px solid #F1F0F1;
 	padding: 14px 72px;
-	// width: 180px;
-	// height: 50px;
 	text-align: center;
 	color: #F1F0F1;
 }
 
-.content2 {
+
+/******************
+** SALES COPY AREA
+******************/
+
+
+.sales-container {
 	background-color: yellow;
 	background-image: linear-gradient(45deg, #ED1C24, #D4145A);
 	height: 768px;
 }
 
+.sales-text {
+
+}
+
+.sales-text {
+	padding-top: 90px;
+}
+
+.sales-text h2 {
+	color: white;
+}
+
+.sales-text p {
+	
+	font-size: 17px;
+	color: white;
+}
 
 
-.content3 {
+
+/******************
+** SIGN UP DIV
+******************/
+
+
+.signup-container {
 	background-color: #343842;
 	height: 369px;
 }
 
 
-.centerStuff {
-	padding-top: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
 
 
 
-.info {
-	border: 1px solid black;
-}
 
+
+/*****************************
+** I DONT KNOW WHAT THESE ARE
+******************************/
 
 #fontIcon {
     color: #fff;
@@ -87,7 +151,6 @@
 .alert_notice {
 	background-color: RGBA(46, 46, 46, 1);
 	
-
 }
 
 .alert_notice p {
@@ -96,30 +159,6 @@
 	color: white;
 }
 
-///////// Buttons ///////////
 
-.btn-dl {
-	color: white;
-	border: solid 1px white;
-	margin-right: 10px;
-	padding: 10px 20px;
-	display: inline-block;
-	font-family: 'Exo 2';
-}
-
-.btn-dl:hover {
-	background-color: white;
-	border-color: white;
-	color: #957bba;
-}
-
-.rnd {
-	border-radius: 3px;
-}
-
-#myModal h2 {
-	border-radius: 5px;
-	font-family: "Exo 2"
-}
 
 

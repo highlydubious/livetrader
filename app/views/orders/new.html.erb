@@ -1,57 +1,78 @@
+
 <div id="orderHeader">
 	<h2 id="order">Order Up</h2>
 </div>
 
-<%= @account.inspect %><br/>
-<%= @order.inspect %><br/>
-<%= @stock.inspect %><br/>
-
-
-
-<%= form_for ([@account, @order]) do |f| %>
-
+<!-- BEGIN ORDER CONTAINER -->
 <div class="orderContainer">
-   <div class="row orderRow">
+
+  <%= form_for ([@account, @order]) do |f| %>
+    <div class="row orderInputContainer">
       <form>
-      	<div class="large-6 large-centered columns">
-        <ul id="price-form">
+        <div class="large-6 large-centered columns">
 
-          <div class="large-6 columns no-padding">
-          <li class="required">
-            
-            <%= f.text_field :stock, autofocus: true, placeholder: "Ticker" %>
-          </li>
+          <ul id="price-form">
+            <div class="large-6 columns no-padding">
+              <li class="required">
+              <%= f.text_field :stock, autofocus: true, placeholder: "Ticker" %>
+              </li>
+            </div>
 
+            <div class="large-6 columns no-padding">
+              <li class="required">
+              <%= f.number_field :qty, size: 6, placeholder: 'Shares',  id:"shares" %>
+              </li>
+            </div>
+          </ul>
+
+          <div class="row">
+            <div class="large-6 columns large-centered">
+              <p>
+                <%= f.submit "Confirm", class: "button" %>
+                <%= link_to "Cancel", '#', class: 'button alert' %>
+              </p>
+            </div>
           </div>
-          <div class="large-6 columns no-padding">
-          <li class="required">
-            
-            <%= f.number_field :qty, size: 6, placeholder: 'Shares' %>
-          </li>
-          </div>
 
-        </ul>
-        <div class="row">
-        <div class="large-12 columns">
-        <p>
-          <%= f.submit "Confirm", class: "button" %>
-          <%= link_to "Cancel", '#', class: 'button alert' %>
-        </p>
-        </div>
-        </div>
         </div>
       </form>
-    <% end %>
+    </div> <!-- end orderBackground -->
+  <% end %>
 
-</div> <!-- end orderBackground -->
-
-    <!-- Price Information Area Right Side -->
-<div class="row">
-    <div class="large-2 columns large-centered stock-show">
-      <div id="show-stock"></div>
-      <div id="show-info"></div>
-      <div id="show-qty"></div>
-    	<div id="show-cost"></div>
+<!-- ORDER TICKER TABLE -->
+  <div class="row table-info">
+    <div class="large-9 large-centered columns">
+      <table >
+        <thead>
+          <tr>
+            <th>header 1</th>
+            <th width="150">Header 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stock</td>
+            <td id="show-stock"></td> 
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td id="show-price"></td>
+          </tr>
+          <tr>
+            <td>Quantity</td>
+            <td id="show-qty"></td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>Content Goes Here</td>
+          </tr>
+          <tr>  
+            <td>New Balance</td>
+            <td>Content Goes Here</td> 
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
+
 </div>

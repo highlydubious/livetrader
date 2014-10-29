@@ -1,23 +1,23 @@
 <div class="bg-body">
   <div class="row">
-      <div class="large-6 large-centered columns sign-up">
-          <h2>Sign up</h2>
+      <div class="large-5 large-centered columns signup-form">
+          <h2 id="signup-form-h2">Sign up</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
-         <div><%= f.label :username, class: "signup" %><br />
+         <div><%= f.label :username, class: "signup-form" %><br />
         <%= f.text_field :username, autofocus: true %></div>
 
-        <div><%= f.label :email, class: "signup" %><br />
+        <div><%= f.label :email, class: "signup-form" %><br />
         <%= f.email_field :email, autofocus: true %></div>
 
-        <div><%= f.label :password, class: "signup" %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
+        <div><%= f.label :password, class: "signup-form" %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
           <%= f.password_field :password, autocomplete: "off" %></div>
 
-        <div><%= f.label :password_confirmation, class: "signup" %><br />
+        <div><%= f.label :password_confirmation, class: "signup-form" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
 
-        <div><%= f.submit "Sign up", class: "button" %></div>
+        <div><%= f.submit "Sign up", class: "button rnd" %></div>
       <% end %>
 
       <%= render "devise/shared/links" %>

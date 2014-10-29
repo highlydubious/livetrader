@@ -1,6 +1,7 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/******************
+// HEADER INFO
+******************/
 
 #orderHeader {
 	height: 100px;
@@ -8,12 +9,19 @@
 	background: #D9FCFF;
 	text-align: center;
 	padding-top: 20px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid #9BD4C6;
 }
 
-#order {
+#orderHeader h2 {
+	font-family: "Exo 2";
+	font-weight: 400;
 	color: #1D8FAA;
 }
+
+/******************
+// ORDER BODY
+******************/
 
 .orderContainer {
 	background: #F6FCF5;
@@ -28,6 +36,15 @@
 	list-style: none;
 }
 
+/******************
+// ORDER INPUTS
+******************/
+
+.orderInputContainer {
+	padding-top: 50px;
+	border-bottom: 1px solid #9BD4C6;
+}
+
 input[type="text"], input[type="number"], input[type="email"], input[type="password"]   {
 	background-color: white;
 	height: 80px;
@@ -37,10 +54,17 @@ input[type="text"], input[type="number"], input[type="email"], input[type="passw
 	border-radius: 2px;
 }
 
-.orderRow {
-	padding-top: 90px;
-	border-bottom: 1px solid #9BD4C6;
+
+// Quantity of Shares
+#shares {
+	background-color: white;
+	height: 80px;
+	font-size: 33px;
+	z-index: 1000;
+	border: 1px solid #9BD4C6;
+	border-radius: 2px;
 }
+
 
 .stock-show {
 	font-size: 45px;
@@ -48,6 +72,14 @@ input[type="text"], input[type="number"], input[type="email"], input[type="passw
 
 .columns.no-padding {
 	padding: 0 9px 0 0;
+}
+
+
+
+.table-info td {
+	font-size: 20px;
+	height: 50px;
+	width: 400px;
 }
 
 

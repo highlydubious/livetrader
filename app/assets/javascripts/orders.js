@@ -14,20 +14,18 @@ $(document).ready(function() {
 
 	$("#order_stock").focusout(function() {
 
-		var str = $('#order_stock').val()
-		var date = '2014-10-21'
+		var stockInput = $('#order_stock').val()
+		var date = '2014-10-28'
 	
 		$.ajax({
 			dataType: "json",
 			type: "GET",
-			url: queryMaker(str, date)
+			url: queryMaker(stockInput, date)
 		}).done(function(json) {
 			var closePrice = json.query.results.quote.Close
 			console.log(closePrice)
-			$('#order_price').val(closePrice)
 
-			// $('#show-stock').text(str)
-			var stockPrice = $('#show-info').text(closePrice)
+			var stockPrice = $('#show-price').text(closePrice)
 		});
 
 		$('#order_qty').focusout(function() {
@@ -35,7 +33,7 @@ $(document).ready(function() {
 			console.log(value);
 			$('#show-qty').html(value)
 
-			var stockPrice = $('#show-info').html()
+			var stockPrice = $('#show-price').html()
 			$('#show-cost').html(stockPrice * value)
 			console.log(stockPrice);
 			console.log(value);

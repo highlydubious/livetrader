@@ -1,6 +1,45 @@
-// Place all the styles related to the accounts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/***********************
+// CONTAINER PROPERTIES
+***********************/
+
+.account-body {
+	background: #F9FFF8;
+}
+
+
+.header {
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+.port {
+	font-size: 40px;
+}
+
+.your-stocks {
+	font-size: 20px;
+}
+
+.quick-info {
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+
+
+
+
+.account-info {
+	height: 300px;
+	width: 500px;
+	border: 1px solid #F10F2F;
+	font-size: 20px;
+	background-color: #FFF5F3;
+	font-family: "Exo 2"
+}
+
+.account-container-2 {
+	font-size: 36px;
+}
 
 .dashboard {
 	background: #F6FCF5;
@@ -11,3 +50,19 @@
 .row.panel {
 	margin-top: 70px;
 }
+
+.overflow {
+	height: 400px;
+	overflow: scroll;
+	border: 1px solid gray;
+	background-color: #FFF5F3;
+}
+
+
+.account-info strong {
+	width: 100%;
+	background-color: #FF7E8D;
+	display: block;
+	padding: 3px 6px;
+}
+

@@ -3,19 +3,23 @@
 	height: 1084px;
 }
 
-.signup {
+#signup-form-h2 {
+	font-style: "Exo 2";
+}
+
+.signup-form {
 	color: white;
 	font-size: 18px;	
 }
 
-.sign-up h2 {
+.signup-form h2 {
 	font-size: 50px;
 	color: white;
 	text-align: center;
 	padding-bottom: 10px;
 }
 
-.sign-up input[type="text"], input[type="number"], input[type="email"], input[type="password"]   {
+.signup-form input[type="text"], input[type="number"], input[type="email"], input[type="password"]   {
 	background-color: white;
 	height: 60px;
 	font-size: 33px;

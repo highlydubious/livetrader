@@ -16,7 +16,7 @@
     <ul class="right">
         
       <% if user_signed_in? %>
-        <li><%= link_to "My Portfolio", '#' %></li>        
+        <li><%= link_to "My Portfolio", account_path(1) %></li>        
         <li><%= link_to current_user.email, dashboard_path %></li>
         <li><%= link_to 'Logout', logout_path %></li>
       <% else %>
@@ -33,7 +33,7 @@
     <ul class="left">
     <% if user_signed_in? %>
         <li><%= link_to '<i id="fontIcon" class="fa fa-twitter"></i>Feed'.html_safe, "#" %></li>
-      <li><a href="#"><i id="fontIcon" class=" fa fa-sign-in"></i>Quick Order</a></li>
+        <li><%= link_to '<i id="fontIcon" class="fa fa-sign-in"></i>Quick Order'.html_safe, new_account_order_path(1) %></li>
     <% end %>
     </ul>
   </section>
